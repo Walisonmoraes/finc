@@ -10,8 +10,17 @@
     --border-color: #D8E1F0; /* Azul claro para bordas */
     --success-color: #3AAE6D; /* Verde mais suave */
     --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    --gradient-accent: linear-gradient(135deg, var(--accent-color), #F5A623);
+    --gradient-dark: linear-gradient(135deg, var(--dark-bg), #2C3E50);
     --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --box-shadow-accent: 0 10px 25px rgba(232, 182, 42, 0.3);
     --border-radius: 8px;
+    --border-radius-lg: 16px;
+    --transition-fast: all 0.3s ease;
+    --transition-medium: all 0.5s ease;
+    --transition-slow: all 0.8s ease;
+    --glare-color: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -230,7 +239,7 @@ section {
 
 /* Header */
 header {
-    background-color: #333333;
+    background-color: rgba(51, 51, 51, 0.95);
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -238,6 +247,14 @@ header {
     left: 0;
     z-index: 1000;
     box-shadow: var(--box-shadow);
+    transition: var(--transition-medium);
+    backdrop-filter: blur(5px);
+}
+
+header.floating {
+    background-color: rgba(26, 34, 51, 0.95);
+    padding: 10px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
 header .container {
@@ -830,20 +847,68 @@ nav ul li a:hover::after {
 
 .advantage-card {
     background-color: var(--light-text);
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-lg);
     box-shadow: var(--box-shadow);
     padding: 30px;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(216, 225, 240, 0.5);
+}
+
+.advantage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    opacity: 0;
+    z-index: -1;
+    transition: var(--transition-medium);
+}
+
+.advantage-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--glare-color) 0%, transparent 50%);
+    opacity: 0;
+    z-index: -1;
+    transition: var(--transition-medium);
+    pointer-events: none;
+    transform: translate(var(--glare-position, 50% 50%));
 }
 
 .advantage-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: var(--box-shadow-hover);
+    border-color: transparent;
+}
+
+.advantage-card:hover::before {
+    opacity: 0.05;
+}
+
+.advantage-card:hover::after {
+    opacity: 0.6;
+}
+
+.advantage-card:hover .advantage-icon {
+    background: var(--gradient-accent);
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 20px rgba(232, 182, 42, 0.4);
 }
 
 .advantage-icon {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background-color: var(--primary-color);
     color: var(--light-text);
     border-radius: 50%;
@@ -851,12 +916,70 @@ nav ul li a:hover::after {
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    transition: var(--transition-medium);
+    box-shadow: 0 5px 15px rgba(46, 80, 144, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-icon::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 140%;
+    height: 140%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: rotate(45deg) translateX(-100%);
+    transition: var(--transition-fast);
+}
+
+.advantage-card:hover .advantage-icon::before {
+    transform: rotate(45deg) translateX(100%);
+    transition: var(--transition-fast);
 }
 
 .advantage-card h3 {
     color: var(--primary-color);
     margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 1.4rem;
+    position: relative;
+    padding-bottom: 12px;
+    transition: var(--transition-medium);
+}
+
+.advantage-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 3px;
+    transition: var(--transition-medium);
+}
+
+.advantage-card:hover h3 {
+    color: var(--secondary-color);
+}
+
+.advantage-card:hover h3::after {
+    width: 60px;
+    background: var(--gradient-accent);
+}
+
+.advantage-card p {
+    color: #555;
+    line-height: 1.7;
+    transition: var(--transition-medium);
+}
+
+.advantage-card:hover p {
+    color: var(--text-color);
 }
 
 /* Calculator Section */

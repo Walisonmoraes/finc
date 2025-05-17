@@ -7,6 +7,8 @@
     <meta name="description" content="A Finc Consórcio oferece as melhores soluções em consórcios para imóveis, veículos, serviços e muito mais. Simule agora e realize seus sonhos!">
     <link rel="icon" href="images/consorcios/logotitulo.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -366,11 +368,13 @@
         </div>
     </section>
 
-    <section id="estatisticas" class="stats-section">
+    <section id="estatisticas" class="stats-section wave-section parallax">
+        <div class="parallax-bg"></div>
+        <div class="particles-bg" id="stats-particles"></div>
         <div class="container">
             <div class="stats-container">
-                <div class="stat-item">
-                    <div class="stat-icon">
+                <div class="stat-item glass-effect" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon animate-float">
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="stat-counter">
@@ -379,8 +383,8 @@
                     <h3>Clientes Satisfeitos</h3>
                 </div>
                 
-                <div class="stat-item">
-                    <div class="stat-icon">
+                <div class="stat-item glass-effect" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon animate-float">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <div class="stat-counter">
@@ -389,8 +393,8 @@
                     <h3>Em Créditos Contemplados</h3>
                 </div>
                 
-                <div class="stat-item">
-                    <div class="stat-icon">
+                <div class="stat-item glass-effect" data-aos="fade-up" data-aos-delay="500">
+                    <div class="stat-icon animate-float">
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <div class="stat-counter">
@@ -400,6 +404,7 @@
                 </div>
             </div>
         </div>
+        <div class="wave-effect"></div>
     </section>
 
     <section id="sobre" class="about">
@@ -412,23 +417,6 @@
                     <p>Nossa equipe é formada por profissionais altamente qualificados e comprometidos com a excelência no atendimento. Trabalhamos com as principais administradoras de consórcio do Brasil, garantindo segurança e confiabilidade em todas as nossas operações.</p>
                     
                     <p>Na Finc Consórcio, acreditamos que o planejamento financeiro é o caminho para a realização de sonhos. Por isso, oferecemos soluções personalizadas que se adaptam às necessidades e ao orçamento de cada cliente.</p>
-                    
-                    <div class="about-numbers">
-                        <div class="number-item">
-                            <span class="number">+5000</span>
-                            <span class="label">Clientes Satisfeitos</span>
-                        </div>
-                        
-                        <div class="number-item">
-                            <span class="number">+R$ 500M</span>
-                            <span class="label">Em Créditos Contemplados</span>
-                        </div>
-                        
-                        <div class="number-item">
-                            <span class="number">+10</span>
-                            <span class="label">Anos de Experiência</span>
-                        </div>
-                    </div>
                     
                     <a href="#contato" class="btn btn-primary">Entre em Contato</a>
                 </div>
@@ -754,8 +742,11 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/counters.js"></script>
+    <script src="js/effects.js"></script>
 </body>
 </html>
