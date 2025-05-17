@@ -331,6 +331,37 @@ nav ul li a:hover::after {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
+    transition: var(--transition-medium);
+    z-index: 1010;
+}
+
+.menu-mobile.active i {
+    transform: rotate(90deg);
+}
+
+nav.active {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: rgba(26, 34, 51, 0.95);
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Hero Section */
@@ -2081,8 +2112,31 @@ footer::before {
         display: none;
     }
     
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul li {
+        margin: 0;
+    }
+    
+    nav ul li a {
+        color: var(--light-text);
+        font-size: 1.1rem;
+        display: block;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    nav ul li a:hover {
+        color: var(--accent-color);
+    }
+    
     .menu-mobile {
         display: block;
+        color: var(--light-text);
+        padding: 10px;
     }
     
     .hero-content h2 {
