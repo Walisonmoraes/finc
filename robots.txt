@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.fincconsorcios.com.br/sitemap.xml
