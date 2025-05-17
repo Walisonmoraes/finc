@@ -113,14 +113,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // FAQ Accordion
-    const faqQuestions = document.querySelectorAll('.faq-question');
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
     
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-            const answer = this.nextElementSibling;
+    // Inicialmente, feche todos os conteúdos do acordeão
+    document.querySelectorAll('.accordion-content').forEach(content => {
+        content.classList.remove('active');
+    });
+    
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('i');
             
+            // Toggle da classe active no cabeçalho e no conteúdo
             this.classList.toggle('active');
-            answer.classList.toggle('active');
+            content.classList.toggle('active');
+            
+            // Alterna o ícone entre + e x (usando rotação CSS)
+            if (content.classList.contains('active')) {
+                icon.classList.add('fa-rotate');
+            } else {
+                icon.classList.remove('fa-rotate');
+            }
         });
     });
     
