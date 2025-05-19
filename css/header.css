@@ -1,0 +1,28 @@
+/* Estilos para deixar a barra de navegação mais estreita */
+header {
+    padding: 5px 0 !important;
+}
+
+header.floating {
+    padding: 3px 0 !important;
+}
+
+header .container {
+    padding: 5px !important;
+}
+
+.logo .desktop-logo {
+    max-height: 50px !important;
+    min-width: 120px !important;
+}
+
+nav ul li {
+    padding: 5px 10px !important;
+}
+
+/* Ajuste para o menu mobile */
+@media (max-width: 768px) {
+    nav.active {
+        top: 60px !important;
+    }
+}
