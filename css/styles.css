@@ -2024,11 +2024,40 @@ footer::before {
 }
 
 /* Estilos específicos para o texto do slide 3 na versão mobile */
-#slide3 .mobile-text h2 {
-    font-size: 0.75rem;
-    line-height: 1;
+#slide3 .mobile-text {
+    text-align: right;
+    padding-right: 20px;
+    padding-left: 0;
+    top: 35%;
+}
+
+#slide3 .mobile-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
     letter-spacing: 0.2px;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+    text-align: right;
+    padding-left: 0;
+}
+
+#slide3 .mobile-text p {
+    text-align: right;
+    margin-bottom: 15px;
+    font-size: 0.75rem;
+    margin-left: auto;
+    margin-right: 5%;
+    width: 40%;
+    float: right;
+    color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(46, 80, 144, 0.5);
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+#slide3 .mobile-text .btn {
+    margin-left: auto;
+    margin-right: 0;
+    display: inline-block;
 }
 
 /* Estilos para a seção de estatísticas */
@@ -2136,12 +2165,93 @@ footer::before {
     line-height: 1;
 }
 
-#slide3 .mobile-text .btn-simular-banner {
-    font-size: 0.65rem;
-    padding: 5px 8px;
-    min-width: 70px;
-    max-width: 80px;
-    margin-top: 5px;
+/* Estilos para o banner3 mobile */
+.banner3-mobile-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: transparent;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner3-mobile-text h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    text-align: left;
+    color: white;
+}
+
+.banner3-mobile-text p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: left;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* Removido estilo antigo que pode estar causando conflito */
+
+.banner3-mobile-button {
+    position: absolute;
+    bottom: 160px;
+    right: 0;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.banner3-mobile-button .btn-simular-banner {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+    min-width: 120px;
+    background-color: #C04132;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    max-width: 140px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+}
+
+#slide3 .mobile-text .mobile-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+#slide3 .mobile-text h2 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    text-align: right;
+    padding-left: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#slide3 .mobile-text p {
+    font-size: 0.7rem;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    text-align: right;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
 }
 
 /* Estilos específicos para o texto do slide 2 na versão mobile */
@@ -2205,6 +2315,21 @@ footer::before {
     transform: none;
 }
 
+/* Estilo específico para o botão do slide 1 na versão mobile */
+#slide1 .mobile-text .btn-simular-banner {
+    margin: 15px 0 10px 20px;
+    min-width: 80px;
+    max-width: 120px;
+    width: auto;
+    white-space: nowrap;
+    float: left;
+    clear: both;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    position: relative;
+    left: 10px;
+}
+
 /* Estilo específico para o botão do slide 2 na versão mobile */
 #slide2 .mobile-text .btn-simular-banner {
     margin: 10px 0 0 0;
@@ -2212,6 +2337,18 @@ footer::before {
     clear: both;
     position: static;
     align-self: flex-end;
+    min-width: 120px;
+    max-width: none;
+    width: auto;
+    white-space: nowrap;
+}
+
+/* Estilo específico para o botão do slide 4 na versão mobile */
+#slide4 .mobile-text .btn-simular-banner {
+    margin: 10px 0 0 auto;
+    float: right;
+    position: relative;
+    right: 20px;
     min-width: 120px;
     max-width: none;
     width: auto;
