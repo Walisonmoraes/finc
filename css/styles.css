@@ -937,6 +937,129 @@ nav.active {
     box-shadow: 0 0 20px rgba(232, 182, 42, 0.4);
 }
 
+/* About Finc Section */
+.about-finc {
+    background-color: #fff;
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-finc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/consorcios/pattern-bg.svg');
+    background-size: cover;
+    opacity: 0.03;
+    z-index: 1;
+}
+
+.about-finc::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    opacity: 0.1;
+    z-index: 1;
+}
+
+.about-finc .section-title {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-finc .section-title::after {
+    display: none;
+}
+
+.title-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.title-decoration .line {
+    height: 2px;
+    width: 60px;
+    background: var(--gradient-accent);
+    display: inline-block;
+}
+
+.title-decoration .diamond {
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color);
+    transform: rotate(45deg);
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.about-finc .container {
+    position: relative;
+    z-index: 2;
+}
+
+.about-finc-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.about-finc-content::before {
+    content: '"';
+    font-family: 'Georgia', serif;
+    font-size: 120px;
+    position: absolute;
+    top: -60px;
+    left: 0;
+    color: var(--primary-color);
+    opacity: 0.05;
+    z-index: 1;
+}
+
+.about-finc-content p {
+    margin-bottom: 1.8rem;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-color);
+    position: relative;
+    z-index: 2;
+}
+
+.about-finc-content p:first-of-type {
+    font-weight: 500;
+}
+
+.about-finc-content .contact-btn-container {
+    text-align: center;
+    margin: 50px auto 20px;
+    width: 100%;
+}
+
+.about-finc-content .btn-primary {
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(46, 80, 144, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-finc-content .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(46, 80, 144, 0.3);
+}
+
 .advantage-icon {
     width: 70px;
     height: 70px;
@@ -1337,6 +1460,29 @@ nav.active {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.about-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.about-section p {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.about-section h2 {
+    margin-bottom: 30px;
+}
+
+.about-section .btn {
+    display: block;
+    max-width: 200px;
+    margin: 30px auto 0;
 }
 
 /* FAQ Section */
